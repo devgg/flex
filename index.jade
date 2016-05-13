@@ -1,0 +1,66 @@
+mixin dropdown(propertyName, propertyValues)
+    div(class="dropdown")
+        .dropdown-label(data-propertyName=propertyName)
+            | #{propertyName}
+        .dropdown-content(class=propertyName)
+            each propertyValue in propertyValues
+                .dropdown-item(data-propertyValue=propertyValue, data-propertyName=propertyName)
+                    | #{propertyValue}
+
+
+
+doctype html
+html(lang="en")
+    head
+        title= pageTitl
+        link(href='style.css', rel='stylesheet')
+        script(src="https://use.fontawesome.com/1aa05e6020.js")
+        script(src="bower_components/jquery/dist/jquery.min.js")
+        script(src="flex.js")
+
+    body
+        #main
+            #flex-fixed-size-container
+                #flex-container
+                    each number in [1, 2, 3, 4, 5]
+                        div(id="flex-item-" + number, class="flex-item item-" + number)
+            #controls-container
+                #container-control
+                    +dropdown("flex-direction", ["row", "row-reverse", "column", "column-reverse"])
+                    +dropdown("justify-content", ["flex-start", "flex-end", "center", "space-between", "space-around"])
+                    +dropdown("align-items", ["flex-start", "flex-end", "center", "baseline", "stretch"])
+                    +dropdown("align-content", ["flex-start", "flex-end", "center", "stretch", "space-between", "space-around"])
+                    +dropdown("flex-wrap", ["no-wrap", "wrap", "wrap-reverse"])
+                #item-control
+                    +dropdown("align-self", ["auto", "flex-start", "flex-end", "center", "baseline", "stretch"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
