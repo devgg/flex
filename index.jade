@@ -23,7 +23,7 @@ html(lang="en")
             #flex-fixed-size-container
                 #flex-container
                     each number in [1, 2, 3, 4, 5]
-                        div(id="flex-item-" + number, class="flex-item item-" + number)
+                        div(id="flex-item-" + number, class="flex-item item-" + number, data-number=number)
             #controls-container
                 #container-control
                     +dropdown("flex-direction", ["row", "row-reverse", "column", "column-reverse"])
@@ -31,7 +31,7 @@ html(lang="en")
                     +dropdown("align-items", ["flex-start", "flex-end", "center", "baseline", "stretch"])
                     +dropdown("align-content", ["flex-start", "flex-end", "center", "stretch", "space-between", "space-around"])
                     +dropdown("flex-wrap", ["no-wrap", "wrap", "wrap-reverse"])
-                #item-control
+                #item-control.item-1
                     +dropdown("align-self", ["auto", "flex-start", "flex-end", "center", "baseline", "stretch"])
 
 

@@ -92,6 +92,7 @@ body {
 #item-control {
     position: relative;
     display: inline-block;
+    height: 50px;
 }
 
 .dropdown-content {

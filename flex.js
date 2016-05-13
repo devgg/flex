@@ -7,6 +7,8 @@ $( document ).ready(function() {
     var flexContainerColor = "white";
     var flexContainerColorHover = "lightgray";
 
+    var $itemControl = $("#item-control");
+
     $flexContainer.hover(function(event) {
         //$flexContainer.css("background-color", flexContainerColorHover);
     }, function() {
@@ -40,8 +42,10 @@ $( document ).ready(function() {
     }
 
     $flexItem.click(function() {
-        //$(this).css("flex-grow", $(this).css("flex-grow") == 0 ? 1 : 0);
-        $(this).css("align-self", "flex-start");
+        $selectedItem = $(this)
+        var itemNumber = $selectedItem.attr("data-number");
+        $itemControl.removeClass();
+        $itemControl.addClass("item-" + itemNumber);
     });
 
     $("html").click(function() {
